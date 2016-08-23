@@ -47,7 +47,8 @@ public class Main {
 //        createSubject.emitPublish();
 //        createSubject.emitReplay();
 
-        ConditionalObservable conditionalObsevable = new ConditionalObservable();
-        conditionalObsevable.amb();
+        ConditionalObservable conditionalObservable = new ConditionalObservable();
+        conditionalObservable.amb();
+        conditionalObservable.defaultIfEmpty();
     }
 }
