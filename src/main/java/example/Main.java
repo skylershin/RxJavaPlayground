@@ -50,5 +50,6 @@ public class Main {
         ConditionalObservable conditionalObservable = new ConditionalObservable();
         conditionalObservable.amb();
         conditionalObservable.defaultIfEmpty();
+        conditionalObservable.skipUntil();
     }
 }
