@@ -2,9 +2,6 @@ package example;
 
 import java.util.concurrent.TimeUnit;
 
-import rx.Observable;
-import rx.functions.Action1;
-
 public class Main {
     public static void main(String[] args) {
 //        CreateObservable createObservable = new CreateObservable();
@@ -58,6 +55,16 @@ public class Main {
 //        conditionalObservable.skipUntil();
 
         FilterObservable filterObservable = new FilterObservable();
-        filterObservable.skipFirstAndDebounce();
+//        filterObservable.skipFirstAndDebounce();
+//        filterObservable.filter();
+//        filterObservable.takeLast(4);
+        filterObservable.takeLast(4, 1, TimeUnit.SECONDS);
+
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }
