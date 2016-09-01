@@ -1,5 +1,10 @@
 package example;
 
+import java.util.concurrent.TimeUnit;
+
+import rx.Observable;
+import rx.functions.Action1;
+
 public class Main {
     public static void main(String[] args) {
 //        CreateObservable createObservable = new CreateObservable();
@@ -47,9 +52,12 @@ public class Main {
 //        createSubject.emitPublish();
 //        createSubject.emitReplay();
 
-        ConditionalObservable conditionalObservable = new ConditionalObservable();
-        conditionalObservable.amb();
-        conditionalObservable.defaultIfEmpty();
-        conditionalObservable.skipUntil();
+//        ConditionalObservable conditionalObservable = new ConditionalObservable();
+//        conditionalObservable.amb();
+//        conditionalObservable.defaultIfEmpty();
+//        conditionalObservable.skipUntil();
+
+        FilterObservable filterObservable = new FilterObservable();
+        filterObservable.skipFirstAndDebounce();
     }
 }
