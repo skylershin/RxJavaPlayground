@@ -54,17 +54,21 @@ public class Main {
 //        conditionalObservable.defaultIfEmpty();
 //        conditionalObservable.skipUntil();
 
-        FilterObservable filterObservable = new FilterObservable();
+//        FilterObservable filterObservable = new FilterObservable();
 //        filterObservable.skipFirstAndDebounce();
 //        filterObservable.filter();
 //        filterObservable.takeLast(4);
-        filterObservable.takeLast(4, 1, TimeUnit.SECONDS);
+//        filterObservable.takeLast(4, 1, TimeUnit.SECONDS);
+//
+//        try {
+//            TimeUnit.SECONDS.sleep(5);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+          SubscribeOnObservable subscribeOnObservable = new SubscribeOnObservable();
+          subscribeOnObservable.multipleSubscribe();
+
 
     }
 }
