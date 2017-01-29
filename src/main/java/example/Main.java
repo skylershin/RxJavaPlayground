@@ -60,15 +60,19 @@ public class Main {
 //        filterObservable.takeLast(4);
 //        filterObservable.takeLast(4, 1, TimeUnit.SECONDS);
 //
-//        try {
-//            TimeUnit.SECONDS.sleep(5);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
-          SubscribeOnObservable subscribeOnObservable = new SubscribeOnObservable();
-          subscribeOnObservable.multipleSubscribe();
 
 
+//          SubscribeOnObservable subscribeOnObservable = new SubscribeOnObservable();
+//          subscribeOnObservable.multipleSubscribe();
+
+        FlowControl flowControl = new FlowControl();
+//        flowControl.sample();
+        flowControl.complexSample();
+
+        try {
+            TimeUnit.SECONDS.sleep(15);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
