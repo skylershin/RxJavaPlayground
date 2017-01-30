@@ -1,6 +1,7 @@
 package example
 
 import rx.Observable
+import java.time.Duration
 import java.util.concurrent.TimeUnit
 
 /**
@@ -39,4 +40,35 @@ class FlowControl {
                 .sample(1, TimeUnit.SECONDS)
                 .subscribe (::println)
     }
+
+    fun buffer() {
+        Observable
+                .range(1, 7)
+                .buffer(3, 1)
+                .subscribe(::println)
+    }
+
+    fun bufferingByTimePeriod() {
+        val names = Observable.just("Mary", "Patricia", "Linda",
+                "Barbara", "Elizabeth", "Jennifer", "Maria",
+                "Susan", "Margaret", "Dorothy")
+
+        val absoluteDelayMills: Observable<Long> = Observable.just(100, 600, 900,
+                1100,
+                3300, 3400, 3500, 3600,
+                4400, 4800)
+
+        val delayedNames = names
+                .zipWith(absoluteDelayMills, {n, d ->
+                    Observable.just(n)
+                            .delay(d, TimeUnit.MILLISECONDS)
+                })
+                .flatMap { o -> o }
+
+        delayedNames
+                .buffer(1, TimeUnit.SECONDS)
+                .subscribe (::println)
+    }
+
+
 }

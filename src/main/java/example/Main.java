@@ -67,7 +67,10 @@ public class Main {
 
         FlowControl flowControl = new FlowControl();
 //        flowControl.sample();
-        flowControl.complexSample();
+//        flowControl.complexSample();
+
+//        flowControl.buffer();
+        flowControl.bufferingByTimePeriod();
 
         try {
             TimeUnit.SECONDS.sleep(15);
