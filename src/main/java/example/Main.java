@@ -72,8 +72,11 @@ public class Main {
 //        flowControl.buffer();
         flowControl.bufferingByTimePeriod();
 
+        ParallelProcess parellelProcess = new ParallelProcess();
+        parellelProcess.useFlatMap();
+
         try {
-            TimeUnit.SECONDS.sleep(15);
+            TimeUnit.SECONDS.sleep(20);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
